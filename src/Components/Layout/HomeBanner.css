@@ -1,0 +1,657 @@
+
+/* =================================
+   HEY!CARTS HOME BANNER
+================================= */
+
+.hc-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  padding: 75px 0 45px;
+
+  background:
+    radial-gradient(
+      ellipse at 85% 20%,
+      rgba(164, 245, 195, 0.48),
+      transparent 40%
+    ),
+    linear-gradient(
+      125deg,
+      #ffffff 0%,
+      #f7fffa 55%,
+      #eafff2 100%
+    );
+}
+
+/* ANIMATED BACKGROUND GLOW */
+
+.hc-hero::before {
+  content: "";
+  position: absolute;
+
+  width: 480px;
+  height: 480px;
+
+  right: -180px;
+  top: -170px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 196, 95, 0.12);
+  filter: blur(85px);
+
+  pointer-events: none;
+  z-index: -1;
+
+  animation: heroAmbient 10s ease-in-out infinite alternate;
+}
+
+@keyframes heroAmbient {
+  from {
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translate(-65px, 70px);
+    opacity: 1;
+  }
+}
+
+/* =================================
+   HERO CONTAINER
+================================= */
+
+.hc-hero-container {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 35px;
+
+  display: grid;
+  grid-template-columns: 47% 53%;
+  align-items: center;
+  gap: 0;
+}
+
+.hc-hero-content {
+  position: relative;
+  z-index: 3;
+  min-width: 0;
+}
+
+/* =================================
+   SMALL TITLE
+================================= */
+
+.hc-small-title {
+  display: inline-block;
+
+  color: #008e42;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+/* =================================
+   MAIN HEADING
+================================= */
+
+.hc-hero-content h1 {
+  margin: 22px 0;
+
+  color: #151a24;
+
+  font-size: clamp(45px, 5vw, 75px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -3px;
+}
+
+.hc-hero-content h1 span {
+  color: #008e42;
+}
+
+.hc-hero-description {
+  max-width: 440px;
+
+  color: #647083;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =================================
+   BUTTONS
+================================= */
+
+.hc-hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.hc-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+  padding: 16px 25px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      120deg,
+      #00883c,
+      #00b65a
+    );
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 22px rgba(0, 140, 60, 0.15);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.hc-primary-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.hc-primary-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 14px 30px rgba(0, 150, 75, 0.25);
+}
+
+.hc-primary-btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* VIDEO BUTTON */
+
+.hc-video-btn {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+  padding: 10px 20px;
+
+  border: 1px solid #b9dfc8;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: #151a24;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hc-video-btn > span {
+  display: grid;
+  place-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  background: #008e42;
+  color: #ffffff;
+
+  transition: transform 0.3s ease;
+}
+
+.hc-video-btn:hover {
+  transform: translateY(-3px);
+
+  border-color: #008e42;
+
+  box-shadow:
+    0 8px 20px rgba(0, 120, 60, 0.1);
+}
+
+.hc-video-btn:hover > span {
+  transform: scale(1.12);
+}
+
+/* =================================
+   FEATURE CARDS
+================================= */
+
+.hc-hero-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+  margin-top: 55px;
+}
+
+.hc-hero-feature {
+  min-width: 0;
+  padding: 19px 12px;
+
+  text-align: center;
+
+  border: 1px solid #e1eee5;
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  box-shadow:
+    0 6px 20px rgba(0, 80, 40, 0.035);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.hc-hero-feature:hover {
+  border-color: #8cddb0;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 14px 30px rgba(0, 130, 60, 0.1);
+}
+
+/* ICON */
+
+.hc-hero-feature-icon {
+  display: grid;
+  place-items: center;
+
+  width: 54px;
+  height: 54px;
+
+  margin: 0 auto 15px;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e5faed,
+      #d0f4de
+    );
+
+  color: #008e42;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.hc-hero-feature:hover .hc-hero-feature-icon {
+  transform: translateY(-5px) scale(1.05);
+
+  background:
+    linear-gradient(
+      135deg,
+      #c7f5da,
+      #a8ebc4
+    );
+}
+
+.hc-hero-feature h4 {
+  margin: 0 0 8px;
+
+  color: #1c2b23;
+
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.hc-hero-feature p {
+  margin: 0;
+
+  color: #798394;
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =================================
+   TROLLEY IMAGE AREA
+================================= */
+
+.hc-hero-image-area {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 550px;
+}
+
+/* ANIMATED GREEN CIRCLE */
+
+.hc-hero-background {
+  position: absolute;
+
+  width: min(100%, 510px);
+  aspect-ratio: 1;
+
+  right: -25px;
+  top: 5px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 40% 35%,
+      #f1fff5 0%,
+      #d9fbe6 48%,
+      #b7efcf 100%
+    );
+
+  box-shadow:
+    0 0 80px rgba(0, 175, 90, 0.1);
+
+  animation:
+    trolleyCircle 7s ease-in-out infinite alternate;
+}
+
+@keyframes trolleyCircle {
+  from {
+    transform: scale(0.96);
+    opacity: 0.75;
+  }
+
+  to {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+/* TROLLEY */
+
+.hc-hero-trolley {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  width: 100%;
+  max-width: 650px;
+
+  height: 540px;
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 24px 20px rgba(0, 0, 0, 0.14)
+    );
+
+  /* Floating motion is handled by Framer Motion */
+}
+
+/* IMAGE TEXT */
+
+.hc-hero-image-text {
+  position: absolute;
+  z-index: 3;
+
+  right: 0;
+  bottom: 75px;
+
+  color: #17241e;
+
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.15;
+
+  pointer-events: none;
+}
+
+.hc-hero-image-text span {
+  color: #008e42;
+}
+
+/* =================================
+   RETAILER STRIP
+================================= */
+
+.hc-retailer-strip {
+  max-width: 1150px;
+  margin: 45px auto 0;
+  padding: 25px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 40px;
+
+  border-top: 1px solid #e5eee8;
+}
+
+.hc-retailer-strip > span {
+  color: #94a69b;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+
+  white-space: nowrap;
+}
+
+.hc-retailer-names {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 40px;
+}
+
+.hc-retailer-names span {
+  color: #718578;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hc-retailer-names span:hover {
+  color: #008e42;
+  transform: translateY(-3px);
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+  .hc-hero-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hc-hero-content {
+    text-align: center;
+  }
+
+  .hc-hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hc-hero-buttons {
+    justify-content: center;
+  }
+
+  .hc-hero-features {
+    max-width: 720px;
+    margin: 45px auto 0;
+  }
+
+  .hc-hero-image-area {
+    min-height: 430px;
+  }
+
+  .hc-hero-trolley {
+    height: 430px;
+    max-width: 500px;
+  }
+
+  .hc-hero-background {
+    width: 380px;
+    right: 50%;
+    top: 10px;
+    transform: translateX(50%);
+    animation: none;
+  }
+
+  .hc-retailer-strip {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 500px) {
+  .hc-hero {
+    padding: 45px 0 25px;
+  }
+
+  .hc-hero-container {
+    padding: 0 20px;
+    gap: 15px;
+  }
+
+  .hc-small-title {
+    font-size: 9px;
+    letter-spacing: 1.4px;
+  }
+
+  .hc-hero-content h1 {
+    font-size: clamp(38px, 10vw, 45px);
+    letter-spacing: -2px;
+  }
+
+  .hc-hero-description {
+    font-size: 13px;
+  }
+
+  .hc-hero-buttons {
+    gap: 12px;
+  }
+
+  .hc-primary-btn,
+  .hc-video-btn {
+    font-size: 12px;
+    padding: 12px 15px;
+  }
+
+  .hc-hero-features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .hc-hero-feature {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    column-gap: 14px;
+
+    padding: 15px;
+    text-align: left;
+  }
+
+  .hc-hero-feature-icon {
+    grid-row: span 2;
+
+    width: 45px;
+    height: 45px;
+
+    margin: 0;
+  }
+
+  .hc-hero-feature h4 {
+    font-size: 13px;
+  }
+
+  .hc-hero-feature p {
+    font-size: 11px;
+  }
+
+  .hc-hero-image-area {
+    min-height: 330px;
+  }
+
+  .hc-hero-trolley {
+    height: 330px;
+  }
+
+  .hc-hero-background {
+    width: 290px;
+    top: 15px;
+  }
+
+  .hc-hero-image-text {
+    right: 5px;
+    bottom: 25px;
+    font-size: 17px;
+  }
+
+  .hc-retailer-strip {
+    margin-top: 25px;
+  }
+
+  .hc-retailer-names {
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .hc-retailer-names span {
+    font-size: 13px;
+  }
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hc-hero::before,
+  .hc-hero-background {
+    animation: none;
+  }
+
+  .hc-hero *,
+  .hc-hero *::before,
+  .hc-hero *::after {
+    transition: none !important;
+  }
+}
