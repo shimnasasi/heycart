@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import Home from "./Components/Pages/Home";
+import About from "./Components/Pages/About";
 
 const App = () => {
   return (
@@ -17,7 +18,10 @@ const App = () => {
           path="/"
           element={<Home />}
         />
-
+ <Route
+          path="/about"
+          element={<About />}
+        />
       </Routes>
 
     </BrowserRouter>

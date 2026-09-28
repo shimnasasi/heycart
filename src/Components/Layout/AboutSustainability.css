@@ -1,0 +1,161 @@
+.as-section {
+  padding: 110px 0;
+  background: #fff;
+}
+
+.as-container {
+  max-width: 1180px;
+  margin: auto;
+  padding: 0 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.as-label {
+  color: #008e42;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+}
+
+.as-content h2 {
+  margin: 17px 0 22px;
+  color: #151a24;
+  font-size: clamp(38px, 4vw, 54px);
+  line-height: 1.06;
+  letter-spacing: -2px;
+}
+
+.as-content h2 strong {
+  color: #008e42;
+}
+
+.as-content > p {
+  max-width: 500px;
+  color: #6e7884;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.as-stats {
+  display: flex;
+  gap: 35px;
+  margin-top: 35px;
+}
+
+.as-stat {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.as-stat-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #e4faec;
+  color: #008e42;
+}
+
+.as-stat > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.as-stat strong {
+  color: #008e42;
+  font-size: 22px;
+}
+
+.as-stat span {
+  max-width: 125px;
+  color: #7b847e;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.as-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  box-shadow: 0 25px 55px rgba(0, 100, 50, 0.12);
+}
+
+.as-image img {
+  display: block;
+  width: 100%;
+  height: 410px;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.as-image:hover img {
+  transform: scale(1.04);
+}
+
+.as-image-copy {
+  position: absolute;
+  top: 42px;
+  right: 35px;
+  color: #fff;
+  font-size: 25px;
+  line-height: 1.1;
+}
+
+.as-image-copy strong {
+  font-size: 34px;
+}
+
+@media (max-width: 850px) {
+  .as-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .as-content {
+    text-align: center;
+  }
+
+  .as-content > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .as-stats {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .as-section {
+    padding: 70px 0;
+  }
+
+  .as-container {
+    padding: 0 20px;
+  }
+
+  .as-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .as-image img {
+    height: 300px;
+  }
+
+  .as-image-copy {
+    top: 25px;
+    right: 20px;
+    font-size: 20px;
+  }
+
+  .as-image-copy strong {
+    font-size: 27px;
+  }
+}
