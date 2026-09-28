@@ -11,7 +11,7 @@ const Navbar = () => {
     ["Products", "#products"],
     ["For Retailers", "#retailers"],
     ["Technology", "#technology"],
-    ["About", "#about"],
+    ["About", "about"],
   ];
 
   return (
