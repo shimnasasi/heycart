@@ -16,7 +16,7 @@ const AboutBanner = () => {
       ? false
       : {
           opacity: 0,
-          y: 30,
+          y: 28,
         },
 
     animate: {
@@ -64,9 +64,8 @@ const AboutBanner = () => {
 
           <motion.div {...reveal(0.5)}>
             <motion.a
-              href="#products"
+              href="/services"
               className="about-banner-btn"
-
               whileHover={
                 reduceMotion
                   ? {}
@@ -75,7 +74,6 @@ const AboutBanner = () => {
                       scale: 1.02,
                     }
               }
-
               whileTap={
                 reduceMotion
                   ? {}
@@ -84,7 +82,7 @@ const AboutBanner = () => {
                     }
               }
             >
-              Our Products
+              Our Services
               <ArrowRight size={15} />
             </motion.a>
           </motion.div>
@@ -101,8 +99,8 @@ const AboutBanner = () => {
               ? false
               : {
                   opacity: 0,
-                  x: 70,
-              }
+                  x: 45,
+                }
           }
 
           animate={{
@@ -126,12 +124,13 @@ const AboutBanner = () => {
               reduceMotion
                 ? {}
                 : {
-                    scale: [1, 1.025, 1],
+                    scale: [1, 1.015, 1],
+                    y: [0, -4, 0],
                   }
             }
 
             transition={{
-              duration: 8,
+              duration: 7,
               repeat: Infinity,
               ease: "easeInOut",
             }}

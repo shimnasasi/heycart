@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
-import shop from "../Images/shop.png";
+import shop from "../Images/tab2.png";
 import "./OurStory.css";
 
 const OurStory = () => {
