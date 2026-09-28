@@ -1,212 +1,624 @@
-.ab-hero {
+/* =========================================
+   ABOUT BANNER
+========================================= */
+
+.about-banner {
   position: relative;
+  width: 100%;
+  height: 535px;
+
   overflow: hidden;
-  padding: 100px 0 80px;
-  background:
-    radial-gradient(
-      ellipse at 82% 20%,
-      rgba(164, 245, 195, 0.42),
-      transparent 40%
-    ),
-    linear-gradient(125deg, #ffffff 0%, #f7fffa 55%, #eafff2 100%);
+
+  background: #fffefa;
 }
 
-.ab-hero::before {
-  content: "";
-  position: absolute;
-  width: 470px;
-  height: 470px;
-  right: -170px;
-  top: -170px;
-  border-radius: 50%;
-  background: rgba(0, 196, 95, 0.11);
-  filter: blur(85px);
-  animation: abAmbient 10s ease-in-out infinite alternate;
-}
 
-@keyframes abAmbient {
-  from {
-    transform: translate(0, 0);
-    opacity: 0.5;
-  }
-  to {
-    transform: translate(-60px, 65px);
-    opacity: 1;
-  }
-}
+/* =========================================
+   MAIN CONTAINER
+========================================= */
 
-.ab-container {
-  position: relative;
-  z-index: 2;
-  max-width: 1250px;
-  margin: auto;
-  padding: 0 35px;
+.about-banner-container {
+  width: 100%;
+  height: 100%;
+
   display: grid;
-  grid-template-columns: 47% 53%;
-  align-items: center;
+  grid-template-columns: 39% 61%;
+
+  align-items: stretch;
+
+  margin: 0;
+  padding: 0;
 }
 
-.ab-content h1 {
-  margin: 22px 0;
-  color: #151a24;
-  font-size: clamp(45px, 5vw, 72px);
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.about-banner-content {
+  position: relative;
+  z-index: 5;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-left: max(
+    35px,
+    calc((100vw - 1180px) / 2)
+  );
+
+  padding-right: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  background: #fffefa;
+}
+
+
+/* =========================================
+   SMALL LABEL
+========================================= */
+
+.about-banner-label {
+  display: block;
+
+  margin-bottom: 17px;
+
+  color: #008f43;
+
+  font-size: 10px;
   font-weight: 800;
-  line-height: 1.04;
-  letter-spacing: -3px;
+
+  letter-spacing: 2.3px;
+
+  text-transform: uppercase;
 }
 
-.ab-content h1 span {
-  color: #008e42;
-}
 
-.ab-label {
-  color: #008e42;
-  font-size: 11px;
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.about-banner-content h1 {
+  margin: 0;
+
+  color: #101722;
+
+  font-size: clamp(44px, 3.8vw, 58px);
+
   font-weight: 800;
-  letter-spacing: 2.5px;
+
+  line-height: 0.99;
+
+  letter-spacing: -2.8px;
 }
 
-.ab-content p {
-  max-width: 470px;
-  color: #647083;
-  font-size: 15px;
-  line-height: 1.8;
+
+/* GREEN SHOP */
+
+.about-banner-content h1 span {
+  position: relative;
+
+  display: inline-block;
+
+  color: #009c49;
 }
 
-.ab-btn {
+
+/* =========================================
+   SHOP SOFT GLOW
+========================================= */
+
+.about-banner-content h1 span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 5%;
+  bottom: -5px;
+
+  width: 90%;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 156, 73, 0.13);
+
+  filter: blur(8px);
+
+  z-index: -1;
+
+  animation:
+    aboutShopGlow 3.5s ease-in-out infinite;
+}
+
+
+@keyframes aboutShopGlow {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleX(0.85);
+  }
+
+  50% {
+    opacity: 0.75;
+    transform: scaleX(1);
+  }
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.about-banner-description {
+  width: 100%;
+  max-width: 440px;
+
+  margin: 20px 0 0;
+
+  color: #667287;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.about-banner-btn {
+  width: fit-content;
+
+  margin-top: 23px;
+
+  padding: 12px 20px;
+
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 28px;
-  padding: 15px 24px;
-  border-radius: 10px;
-  background: linear-gradient(120deg, #00883c, #00b65a);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 8px 22px rgba(0, 140, 60, 0.15);
-  transition: 0.3s ease;
-}
-
-.ab-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(0, 150, 75, 0.25);
-}
-
-.ab-image-area {
-  position: relative;
-  min-height: 540px;
-  display: flex;
-  align-items: center;
   justify-content: center;
+
+  gap: 10px;
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      120deg,
+      #008d40,
+      #00a94f
+    );
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 145, 65, 0.14);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
-.ab-circle {
-  position: absolute;
-  width: 490px;
-  height: 490px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #f1fff5, #d9fbe6 50%, #b7efcf);
-  animation: abCircle 7s ease-in-out infinite alternate;
+
+.about-banner-btn:hover {
+  transform: translateY(-3px);
+
+  background:
+    linear-gradient(
+      120deg,
+      #007d39,
+      #00a94f
+    );
+
+  box-shadow:
+    0 13px 28px
+    rgba(0, 145, 65, 0.23);
 }
 
-@keyframes abCircle {
-  from {
-    transform: scale(0.96);
-  }
-  to {
-    transform: scale(1.05);
-  }
+
+.about-banner-btn svg {
+  transition:
+    transform 0.3s ease;
 }
 
-.ab-image-area img {
+
+.about-banner-btn:hover svg {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   RIGHT IMAGE AREA
+========================================= */
+
+.about-banner-image-area {
   position: relative;
-  z-index: 2;
+
   width: 100%;
-  max-width: 640px;
-  height: 520px;
-  object-fit: contain;
-  filter: drop-shadow(0 24px 20px rgba(0, 0, 0, 0.14));
+  height: 535px;
+
+  overflow: hidden;
+
+  background: #fffefa;
 }
 
-.ab-floating-text {
+
+/* =========================================
+   BANNER IMAGE
+========================================= */
+
+.about-banner-image {
   position: absolute;
-  z-index: 3;
-  right: 5px;
-  bottom: 65px;
-  color: #17241e;
-  font-size: 21px;
-  font-weight: 800;
-  line-height: 1.2;
+
+  top: 0;
+
+  /*
+    Pull image toward text
+  */
+
+  left: -90px;
+
+  width: calc(100% + 90px);
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: 58% center;
+
+  transform-origin: center center;
+
+  will-change: transform;
 }
 
-.ab-floating-text span {
-  color: #008e42;
+
+/* =========================================
+   LIGHT SWEEP ANIMATION
+========================================= */
+
+.about-banner-image-area::after {
+  content: "";
+
+  position: absolute;
+  z-index: 4;
+
+  top: -40%;
+  left: -30%;
+
+  width: 18%;
+  height: 180%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.18),
+      transparent
+    );
+
+  transform: rotate(15deg);
+
+  animation:
+    aboutLightSweep 8s ease-in-out infinite;
 }
 
-@media (max-width: 900px) {
-  .ab-container {
-    grid-template-columns: 1fr;
+
+@keyframes aboutLightSweep {
+
+  0%,
+  30% {
+    left: -30%;
+    opacity: 0;
+  }
+
+  38% {
+    opacity: 0.6;
+  }
+
+  62% {
+    left: 115%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 115%;
+    opacity: 0;
+  }
+}
+
+
+/* =========================================
+   BUTTON SOFT PULSE
+========================================= */
+
+.about-banner-btn {
+  animation:
+    aboutButtonGlow 4s ease-in-out infinite;
+}
+
+
+@keyframes aboutButtonGlow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 8px 20px
+      rgba(0, 145, 65, 0.12);
+  }
+
+  50% {
+    box-shadow:
+      0 10px 27px
+      rgba(0, 145, 65, 0.23);
+  }
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1500px) {
+
+  .about-banner {
+    height: 560px;
+  }
+
+
+  .about-banner-container {
+    grid-template-columns: 40% 60%;
+  }
+
+
+  .about-banner-image-area {
+    height: 560px;
+  }
+
+
+  .about-banner-image {
+    left: -110px;
+
+    width: calc(100% + 110px);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .about-banner {
+    height: 500px;
+  }
+
+
+  .about-banner-container {
+    grid-template-columns: 43% 57%;
+  }
+
+
+  .about-banner-content {
+    padding-left: 30px;
+    padding-right: 0;
+  }
+
+
+  .about-banner-content h1 {
+    font-size: 47px;
+
+    letter-spacing: -2.3px;
+  }
+
+
+  .about-banner-description {
+    max-width: 390px;
+
+    font-size: 13px;
+  }
+
+
+  .about-banner-image-area {
+    height: 500px;
+  }
+
+
+  .about-banner-image {
+    left: -60px;
+
+    width: calc(100% + 60px);
+
+    object-position: 58% center;
+  }
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .about-banner {
+    height: auto;
+  }
+
+
+  .about-banner-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  /* CONTENT */
+
+  .about-banner-content {
+    height: auto;
+
+    padding:
+      55px 25px 35px;
+
+    align-items: center;
+
     text-align: center;
   }
 
-  .ab-content p {
+
+  .about-banner-content h1 {
+    font-size:
+      clamp(42px, 8vw, 54px);
+
+    line-height: 1.02;
+  }
+
+
+  .about-banner-description {
+    max-width: 500px;
+
     margin-left: auto;
     margin-right: auto;
   }
 
-  .ab-image-area {
-    min-height: 430px;
-  }
 
-  .ab-image-area img {
+  /* IMAGE */
+
+  .about-banner-image-area {
+    width: 100%;
     height: 420px;
   }
 
-  .ab-circle {
-    width: 380px;
-    height: 380px;
+
+  .about-banner-image {
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-position: center;
   }
 }
 
+
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 500px) {
-  .ab-hero {
-    padding: 60px 0 30px;
+
+  .about-banner-content {
+    padding:
+      45px 18px 30px;
   }
 
-  .ab-container {
-    padding: 0 20px;
+
+  .about-banner-label {
+    margin-bottom: 14px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
   }
 
-  .ab-content h1 {
+
+  .about-banner-content h1 {
     font-size: 39px;
+
+    line-height: 1.02;
+
     letter-spacing: -2px;
   }
 
-  .ab-image-area {
-    min-height: 330px;
+
+  .about-banner-description {
+    max-width: 350px;
+
+    margin-top: 17px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
   }
 
-  .ab-image-area img {
-    height: 320px;
+
+  .about-banner-btn {
+    margin-top: 20px;
+
+    padding: 11px 18px;
   }
 
-  .ab-circle {
-    width: 280px;
-    height: 280px;
+
+  .about-banner-image-area {
+    height: 315px;
   }
 
-  .ab-floating-text {
-    right: 0;
-    bottom: 30px;
-    font-size: 16px;
+
+  .about-banner-image {
+    left: 0;
+
+    width: 100%;
+
+    object-position: 60% center;
+  }
+
+
+  /* Light sweep is unnecessary on mobile */
+
+  .about-banner-image-area::after {
+    display: none;
   }
 }
 
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .about-banner-content h1 {
+    font-size: 35px;
+  }
+
+
+  .about-banner-image-area {
+    height: 285px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
 @media (prefers-reduced-motion: reduce) {
-  .ab-hero::before,
-  .ab-circle {
-    animation: none;
+
+  .about-banner *,
+  .about-banner *::before,
+  .about-banner *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+
+  .about-banner-image {
+    transform: none !important;
   }
 }
